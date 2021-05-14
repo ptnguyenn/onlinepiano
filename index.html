@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/piano.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #707070;
+        }
+
+        .piano {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .key {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding-bottom: 20px;
+        }
+
+        .white {
+            width: 9%;
+            min-width: 60px;
+            height: 70%;
+            background-color: white;
+            border: 1px solid #ccc;
+            color: #000;
+        }
+
+        .black {
+            width: 6%;
+            height: 43%;
+            margin-left: -4%;
+            margin-right: -3%;
+            z-index: 2;
+            background-color: black;
+            color: #fff;
+        }
+
+        .white.active {
+            background-color: rgb(230, 230, 230);
+        }
+
+        .black.active {
+            background-color: rgb(49, 49, 49);
+        }
+    </style>
+    <title>Online Piano</title>
+</head>
+
+<body>
+    <div class="piano">
+        <div class="key white" data-note="A3">A</div>
+        <div class="key black" data-note="As3">Ab | B#</div>
+        <div class="key white" data-note="B3">B</div>
+        <div class="key white" data-note="C4">C</div>
+        <div class="key black" data-note="Cs4">C#</div>
+        <div class="key white" data-note="D4">D</div>
+        <div class="key black" data-note="Ds4">D# | Eb</div>
+        <div class="key white" data-note="E4">E</div>
+        <div class="key white" data-note="F4">F</div>
+        <div class="key black" data-note="Fs4">F# | Gb</div>
+        <div class="key white" data-note="G4">G</div>
+        <div class="key black" data-note="Gs4">G# | Ab</div>
+        <div class="key white" data-note="A4">A</div>
+        <div class="key black" data-note="As4">Ab | B#</div>
+        <div class="key white" data-note="B4">B</div>
+        <div class="key white" data-note="C5">C</div>
+        <div class="key black" data-note="Cs5">C#</div>
+        <div class="key white" data-note="D5">D</div>
+    </div>
+
+    <audio src="./notes/A3.wav" id="A3"></audio>
+    <audio src="./notes/As3.wav" id="As3"></audio>
+    <audio src="./notes/B3.wav" id="B3"></audio>
+    <audio src="./notes/C4.wav" id="C4"></audio>
+    <audio src="./notes/Cs4.wav" id="Cs4"></audio>
+    <audio src="./notes/D4.wav" id="D4"></audio>
+    <audio src="./notes/Ds4.wav" id="Ds4"></audio>
+    <audio src="./notes/E4.wav" id="E4"></audio>
+    <audio src="./notes/F4.wav" id="F4"></audio>
+    <audio src="./notes/Fs4.wav" id="Fs4"></audio>
+    <audio src="./notes/G4.wav" id="G4"></audio>
+    <audio src="./notes/Gs4.wav" id="Gs4"></audio>
+    <audio src="./notes/A4.wav" id="A4"></audio>
+    <audio src="./notes/As4.wav" id="As4"></audio>
+    <audio src="./notes/B4.wav" id="B4"></audio>
+    <audio src="./notes/C5.wav" id="C5"></audio>
+    <audio src="./notes/Cs5.wav" id="Cs5"></audio>
+    <audio src="./notes/D5.wav" id="D5"></audio>
+
+
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
