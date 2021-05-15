@@ -1,13 +1,18 @@
 const keys = document.querySelectorAll('.key');
 const regulars = document.querySelectorAll('.key.white');
 const sharps = document.querySelectorAll('.key.black');
+
+//matches the piano to the keyboard letters - will play the assigned piano notes
 const whites = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k'];
 const blacks = ['w', 'e', 't', 'y', 'u']
 
+
+//will play the piano note when user clicks on a piano key
 keys.forEach(key => {
     key.addEventListener('click', () => playNote(key));
 })
 
+//allows the user to press keys on their keyboard to play the piano notes
 document.addEventListener('keydown', e => {
     if (e.repeat) return
     const key = e.key
@@ -18,6 +23,8 @@ document.addEventListener('keydown', e => {
     if (blackKeyIndex > -1) playNote(sharps[blackKeyIndex])
 })
 
+//when 'active', key that has been clicked/played will turn grey
+//when note audio file has finished playing, the key will no longer be 'active' and will go back to its original color (white)
 let playNote = (key) => {
     const noteSound = document.getElementById(key.dataset.note)
     noteSound.currentTime = 0

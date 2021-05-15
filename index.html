@@ -5,59 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/piano.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <style>  
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
 
-        body {
-            background-color: #707070;
-        }
+    body {
+        background-color: #5C4033;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .piano {
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
+    .piano {
+        display: flex;
+        justify-content: center;
+    }
 
-        .key {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            font-size: 1.2rem;
-            font-weight: bold;
-            padding-bottom: 20px;
-        }
+    .key {
+        height: calc(var(--width) * 4);
+        width: var(--width);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
 
-        .white {
-            width: 9%;
-            min-width: 60px;
-            height: 70%;
-            background-color: white;
-            border: 1px solid #ccc;
-            color: #000;
-        }
+    .white {
+        --width: 100px;
+        background-color: white;
+        border: 1px solid #333;
+    }
 
-        .black {
-            width: 6%;
-            height: 43%;
-            margin-left: -4%;
-            margin-right: -3%;
-            z-index: 2;
-            background-color: black;
-            color: #fff;
-        }
+    .white.active {
+        background-color: #CCC;
+    }
 
-        .white.active {
-            background-color: rgb(230, 230, 230);
-        }
+    .black {
+        --width: 60px;
+        background-color: black;
+        color: white;
+        margin-left: calc(var(--width) / -2);
+        margin-right: calc(var(--width) / -2);
+        z-index: 2;
+    }
 
-        .black.active {
-            background-color: rgb(49, 49, 49);
-        }
+    .black.active {
+        background-color: #333;
+    }
     </style>
     <title>Online Piano</title>
 </head>
@@ -102,7 +100,6 @@
     <audio src="./notes/C5.wav" id="C5"></audio>
     <audio src="./notes/Cs5.wav" id="Cs5"></audio>
     <audio src="./notes/D5.wav" id="D5"></audio>
-
 
     <script src="./scripts/script.js"></script>
 </body>
